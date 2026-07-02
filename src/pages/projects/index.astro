@@ -1,0 +1,33 @@
+---
+import { getCollection } from "astro:content";
+import PageLayout from "@layouts/PageLayout.astro";
+import Container from "@components/Container.astro";
+import ArrowCard from "@components/ArrowCard.astro";
+import { PROJECTS } from "@consts";
+
+const projects = (await getCollection("projects"))
+  .sort((a, b) => a.data.order - b.data.order);
+---
+
+<PageLayout title={PROJECTS.TITLE} description={PROJECTS.DESCRIPTION}>
+  <Container>
+    <div class="space-y-10">
+      <div class="animate space-y-2">
+        <h1 class="text-2xl font-semibold text-zinc-950 dark:text-white">
+          Projects
+        </h1>
+        <p>
+          Public and in-progress projects. Links are only shown when there is a real
+          public repository or demo to open.
+        </p>
+      </div>
+      <ul class="animate flex flex-col gap-4">
+        {projects.map((project) => (
+          <li>
+            <ArrowCard entry={project} />
+          </li>
+        ))}
+      </ul>
+    </div>
+  </Container>
+</PageLayout>

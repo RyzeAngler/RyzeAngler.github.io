@@ -1,0 +1,40 @@
+---
+import PageLayout from "@layouts/PageLayout.astro";
+import Container from "@components/Container.astro";
+import Link from "@components/Link.astro";
+import { ABOUT } from "@consts";
+---
+
+<PageLayout title={ABOUT.TITLE} description={ABOUT.DESCRIPTION}>
+  <Container>
+    <div class="space-y-10">
+      <div class="animate space-y-2">
+        <h1 class="text-2xl font-semibold text-zinc-950 dark:text-white">
+          About
+        </h1>
+        <p>
+          I am Wu Ryze, online as RyzeAngler. I work as an AI Agent Developer
+          with a focus on agent infrastructure.
+        </p>
+      </div>
+      <article class="animate">
+        <p>
+          I build systems around AI agents, developer tooling, code intelligence,
+          and engineering infrastructure. My work focuses on production-grade agent
+          runtime, tool use, memory, tracing, evaluation, RAG infrastructure, and
+          codebase understanding.
+        </p>
+        <p>
+          I care about the engineering layer behind agents: graph-based workflows,
+          tool routing, runtime context, memory, evaluation loops, and repository-level
+          code context. The goal is to make agents reliable enough to work inside
+          real engineering systems, not only demos.
+        </p>
+        <p>
+          You can find my public work on
+          <Link href="https://github.com/RyzeAngler" external>GitHub</Link>.
+        </p>
+      </article>
+    </div>
+  </Container>
+</PageLayout>

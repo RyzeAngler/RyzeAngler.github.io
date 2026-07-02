@@ -1,0 +1,35 @@
+---
+import Container from "@components/Container.astro";
+import Link from "@components/Link.astro";
+import { SITE } from "@consts";
+
+const nav = [
+  { href: "/", label: "home" },
+  { href: "/work", label: "work" },
+  { href: "/projects", label: "projects" },
+  { href: "/writing", label: "writing" },
+  { href: "/about", label: "about" },
+];
+---
+
+<header>
+  <Container>
+    <div class="flex flex-wrap gap-y-2 justify-between">
+      <Link href="/" underline={false}>
+        <div class="font-semibold">
+          {SITE.NAME}
+        </div>
+      </Link>
+      <nav class="flex flex-wrap gap-x-1 gap-y-1">
+        {nav.map((item, index) => (
+          <>
+            <Link href={item.href}>
+              {item.label}
+            </Link>
+            {index < nav.length - 1 && <span>{`/`}</span>}
+          </>
+        ))}
+      </nav>
+    </div>
+  </Container>
+</header>

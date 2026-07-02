@@ -1,0 +1,108 @@
+---
+import { getCollection } from "astro:content";
+import Container from "@components/Container.astro";
+import PageLayout from "@layouts/PageLayout.astro";
+import ArrowCard from "@components/ArrowCard.astro";
+import Link from "@components/Link.astro";
+import { HOME, PROJECTS, SITE, SOCIALS, WORK, WRITING } from "@consts";
+
+const work = (await getCollection("work"))
+  .sort((a, b) => a.data.order - b.data.order)
+  .slice(0, SITE.NUM_WORKS_ON_HOMEPAGE);
+
+const projects = (await getCollection("projects"))
+  .sort((a, b) => a.data.order - b.data.order)
+  .slice(0, SITE.NUM_PROJECTS_ON_HOMEPAGE);
+---
+
+<PageLayout title={HOME.TITLE} description={HOME.DESCRIPTION}>
+  <Container>
+    <div class="space-y-16">
+      <section class="space-y-5">
+        <p class="animate text-sm font-semibold uppercase tracking-[0.22em] text-accent">
+          AI Agent Developer
+        </p>
+        <div class="animate space-y-4">
+          <h1 class="max-w-3xl text-4xl font-semibold leading-tight text-zinc-950 dark:text-white md:text-5xl">
+            RyzeAngler builds agent infrastructure for production-grade AI systems.
+          </h1>
+          <p class="max-w-2xl text-lg leading-8 text-zinc-600 dark:text-zinc-300">
+            I work on AI agents, agent runtime, developer tools, code intelligence,
+            RAG infrastructure, evaluation, tracing, and engineering automation.
+          </p>
+        </div>
+        <div class="animate flex flex-wrap gap-3 text-sm">
+          <Link href="/projects">View projects</Link>
+          <span>/</span>
+          <Link href="/work">Work focus</Link>
+          <span>/</span>
+          <Link href="https://github.com/RyzeAngler" external>GitHub</Link>
+        </div>
+      </section>
+
+      <section class="animate space-y-6">
+        <div class="flex flex-wrap items-center justify-between gap-y-2">
+          <h2 class="font-semibold text-zinc-950 dark:text-white">
+            {WORK.TITLE}
+          </h2>
+          <Link href="/work">See all work</Link>
+        </div>
+        <div class="grid gap-3">
+          {work.map((entry) => (
+            <div class="rounded-lg border border-zinc-200 p-4 dark:border-zinc-800">
+              <div class="font-semibold text-zinc-950 dark:text-white">
+                {entry.data.title}
+              </div>
+              <p class="mt-1 text-sm">
+                {entry.data.description}
+              </p>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      <section class="animate space-y-6">
+        <div class="flex flex-wrap items-center justify-between gap-y-2">
+          <h2 class="font-semibold text-zinc-950 dark:text-white">
+            {PROJECTS.TITLE}
+          </h2>
+          <Link href="/projects">See all projects</Link>
+        </div>
+        <ul class="flex flex-col gap-4">
+          {projects.map((project) => (
+            <li>
+              <ArrowCard entry={project} />
+            </li>
+          ))}
+        </ul>
+      </section>
+
+      <section class="animate space-y-4">
+        <div class="flex flex-wrap items-center justify-between gap-y-2">
+          <h2 class="font-semibold text-zinc-950 dark:text-white">
+            {WRITING.TITLE}
+          </h2>
+          <Link href="/writing">Topics</Link>
+        </div>
+        <p>
+          Notes are planned around LangGraph agent runtime, memory, trace-based
+          evaluation, RAG infrastructure, and codebase understanding. I will only
+          publish writing here when there is a real article to link.
+        </p>
+      </section>
+
+      <section class="animate space-y-4">
+        <h2 class="font-semibold text-zinc-950 dark:text-white">
+          Connect
+        </h2>
+        <ul class="flex flex-wrap gap-2">
+          {SOCIALS.map((social) => (
+            <li>
+              <Link href={social.HREF} external>{social.NAME}</Link>
+            </li>
+          ))}
+        </ul>
+      </section>
+    </div>
+  </Container>
+</PageLayout>

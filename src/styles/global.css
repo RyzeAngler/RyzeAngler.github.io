@@ -1,0 +1,69 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  overflow-y: scroll;
+  color-scheme: light;
+}
+
+html.dark {
+  color-scheme: dark;
+}
+
+html,
+body {
+  @apply size-full;
+}
+
+body {
+  @apply flex flex-col bg-zinc-50 font-sans antialiased text-zinc-700;
+  @apply dark:bg-zinc-950 dark:text-zinc-300;
+}
+
+header {
+  @apply fixed left-0 right-0 top-0 z-50 py-5;
+  @apply border-b border-transparent bg-zinc-50/80 backdrop-blur-sm;
+  @apply dark:bg-zinc-950/70;
+}
+
+html.scrolled header {
+  @apply border-zinc-200/70 dark:border-zinc-800/70;
+}
+
+main {
+  @apply flex-1 py-28 md:py-32;
+}
+
+footer {
+  @apply py-5 text-sm;
+}
+
+article {
+  @apply max-w-full prose prose-zinc dark:prose-invert;
+  @apply prose-headings:font-semibold;
+  @apply prose-headings:text-zinc-950 prose-headings:dark:text-white;
+}
+
+article a {
+  @apply font-sans text-current underline decoration-zinc-300 underline-offset-2;
+  @apply transition-colors duration-300 ease-in-out;
+  @apply hover:text-zinc-950 hover:decoration-zinc-500;
+  @apply dark:decoration-zinc-600 dark:hover:text-white dark:hover:decoration-zinc-400;
+}
+
+.animate {
+  @apply translate-y-3 opacity-0 transition-all duration-700 ease-out;
+}
+
+.animate.show {
+  @apply translate-y-0 opacity-100;
+}
+
+html #back-to-top {
+  @apply pointer-events-none opacity-0;
+}
+
+html.scrolled #back-to-top {
+  @apply pointer-events-auto opacity-100;
+}
