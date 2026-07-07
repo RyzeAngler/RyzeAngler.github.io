@@ -1,12 +1,14 @@
 ---
 title: RAG and File Context Infrastructure
-description: File parsing, indexing, retrieval, and runtime context services for document-heavy agent workflows.
-order: 4
+description: File parsing, indexing, retrieval, KMS integration, and runtime context for document-heavy agent workflows.
+order: 6
 tags:
   - RAG
   - File Context
-  - LlamaIndex
-  - Milvus
+  - KMS
+  - Retrieval
 ---
 
-I build infrastructure that lets agents access the right document or file context on demand: uploaded files, parsed artifacts, indexes, retrieval results, and runtime state.
+Retrieval work covers document parsing, uploaded file handling, knowledge-base
+integration, retriever components, runtime context injection, and the boundary
+between raw files, parsed artifacts, indexes, and agent-visible context.

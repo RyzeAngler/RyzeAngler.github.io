@@ -1,9 +1,9 @@
 import type { Metadata, Site, Socials } from "@types";
 
 export const SITE: Site = {
-  NAME: "RyzeAngler",
+  NAME: "AI Agent Engineering",
   DESCRIPTION:
-    "AI Agent Developer building agent infrastructure, developer tools, code intelligence systems, and RAG infrastructure.",
+    "AI agent engineering across agent applications, runtimes, orchestration, retrieval, evaluation, tracing, and delivery.",
   URL: "https://ryzeangler.github.io",
   NUM_WORKS_ON_HOMEPAGE: 4,
   NUM_PROJECTS_ON_HOMEPAGE: 2,
@@ -17,24 +17,24 @@ export const HOME: Metadata = {
 export const WORK: Metadata = {
   TITLE: "Work",
   DESCRIPTION:
-    "Agent runtime, SDK, tool use, memory, tracing, evaluation, RAG, and code intelligence work.",
+    "AI agent application development, platform engineering, orchestration, protocols, retrieval, evaluation, and delivery.",
 };
 
 export const PROJECTS: Metadata = {
   TITLE: "Projects",
-  DESCRIPTION: "Selected public and in-progress projects by RyzeAngler.",
+  DESCRIPTION: "Selected public and in-progress projects.",
 };
 
 export const WRITING: Metadata = {
   TITLE: "Writing",
   DESCRIPTION:
-    "Technical writing topics around production agents, code intelligence, and evaluation.",
+    "Technical writing topics around AI agents, orchestration, retrieval, evaluation, and engineering systems.",
 };
 
 export const ABOUT: Metadata = {
   TITLE: "About",
   DESCRIPTION:
-    "About RyzeAngler, an AI Agent Developer focused on agent infrastructure.",
+    "AI agent engineering across application and platform layers.",
 };
 
 export const SOCIALS: Socials = [

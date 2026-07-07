@@ -1,7 +1,7 @@
 ---
-title: Agent Runtime and SDK
-description: Runtime, SDK, CLI, service exposure, and deployment foundations for production-grade agents.
-order: 1
+title: Agent Platform and Runtime
+description: Runtime, SDK, service exposure, and execution foundations for reliable agent systems.
+order: 2
 tags:
   - Agent Runtime
   - Agent SDK
@@ -9,4 +9,6 @@ tags:
   - FastAPI
 ---
 
-I work on the runtime layer behind agents: graph-based workflows, blocking and streaming execution, service exposure, containerized deployment, and reusable project scaffolding.
+Runtime work covers graph-based execution, blocking and streaming paths, session
+context, service APIs, reusable SDK surfaces, and project scaffolding that lets
+agents run as maintainable services instead of isolated demos.

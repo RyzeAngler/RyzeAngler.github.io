@@ -1,7 +1,7 @@
 ---
-title: Evaluation and Tracing
+title: Evaluation, Tracing, and Quality Loops
 description: Trace-based evaluation, LLM-as-a-Judge, Langfuse-style observability, and feedback loops for agent quality.
-order: 5
+order: 7
 tags:
   - Evaluation
   - Tracing
@@ -9,4 +9,6 @@ tags:
   - Feedback Loops
 ---
 
-I treat evaluation as part of the agent loop, not only final-answer grading. Traces, generated test cases, judge feedback, and process-level checks can all feed back into execution quality.
+Evaluation is treated as part of the agent loop, not only final-answer grading.
+Traces, generated cases, judge feedback, process-level checks, latency metrics,
+and written scores can all feed back into execution quality.

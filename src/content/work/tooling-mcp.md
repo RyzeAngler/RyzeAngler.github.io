@@ -1,7 +1,7 @@
 ---
 title: Tool Use and MCP Integration
-description: Tool routing, MCP integration, gateway design, and developer-facing APIs for reliable agent tool use.
-order: 2
+description: Tool design, MCP integration, gateway behavior, and developer-facing APIs for reliable agent actions.
+order: 3
 tags:
   - Tool Routing
   - MCP
@@ -9,4 +9,6 @@ tags:
   - Developer Tools
 ---
 
-I focus on making tool use predictable: routing tools, narrowing execution surfaces, connecting MCP capabilities, and designing developer tools that make agent behavior easier to inspect and maintain.
+Tooling work turns external capabilities into predictable agent actions: routing
+tools, narrowing execution surfaces, connecting MCP capabilities, shaping tool
+contracts, and exposing behavior that can be inspected and maintained.
