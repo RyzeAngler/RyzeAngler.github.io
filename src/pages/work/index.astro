@@ -2,9 +2,10 @@
 import { getCollection, render } from "astro:content";
 import PageLayout from "@layouts/PageLayout.astro";
 import Container from "@components/Container.astro";
-import { WORK } from "@consts";
+import { WORK, WORK_ENTRY_IDS } from "@consts";
 
 const work = (await getCollection("work"))
+  .filter((entry) => WORK_ENTRY_IDS.has(entry.id))
   .sort((a, b) => a.data.order - b.data.order);
 
 const renderedWork = await Promise.all(
@@ -20,15 +21,15 @@ const renderedWork = await Promise.all(
     <div class="space-y-10">
       <div class="animate space-y-2">
         <h1 class="text-2xl font-semibold text-zinc-950 dark:text-white">
-          Work
+          {WORK.TITLE}
         </h1>
         <p>
-          Work spans the agent application layer and the infrastructure beneath it:
-          domain agents, runtimes, routing, orchestration, protocols, tools,
-          retrieval, evaluation, tracing, and delivery.
+          I build and deliver enterprise Agent systems across four connected areas:
+          SDK and Runtime foundations, multi-Agent planning, configurable
+          applications, and production engineering.
         </p>
       </div>
-      <div class="grid gap-5">
+      <div class="grid gap-5 md:grid-cols-2">
         {renderedWork.map((entry) => (
           <section class="animate rounded-lg border border-zinc-200 p-5 dark:border-zinc-800">
             <div class="space-y-2">

@@ -14,14 +14,14 @@ const projects = (await getCollection("projects"))
     <div class="space-y-10">
       <div class="animate space-y-2">
         <h1 class="text-2xl font-semibold text-zinc-950 dark:text-white">
-          Projects
+          {PROJECTS.TITLE}
         </h1>
         <p>
-          Public and in-progress projects. Links are only shown when there is a real
-          public repository or demo to open.
+          I publish the projects that make my engineering work concrete. Public
+          repositories are linked directly; experiments are marked as in progress.
         </p>
       </div>
-      <ul class="animate flex flex-col gap-4">
+      <ul class="animate grid gap-4 md:grid-cols-2">
         {projects.map((project) => (
           <li>
             <ArrowCard entry={project} />

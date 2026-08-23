@@ -1,7 +1,7 @@
 ---
 title: Loom
-description: Runtime file context service for conversational systems and agent workflows.
-order: 1
+description: I am exploring a runtime file context service for conversational systems and agent workflows.
+order: 5
 status: In progress
 tags:
   - Agent Runtime
@@ -10,11 +10,11 @@ tags:
   - Retrieval
 ---
 
-Loom manages uploaded files, parsed artifacts, indexing, and retrieval so agents can access document context without loading entire files into model context.
+I am exploring how uploaded files, parsed artifacts, indexing, and retrieval can become reliable runtime context without loading entire files into model context.
 
-The project sits in the runtime layer of agent systems. It is designed for conversational systems and agent workflows where files need to become queryable context over time.
+I am keeping Loom in the runtime layer of agent systems. I want file context to become queryable over time for conversational systems and agent workflows.
 
-Core concerns:
+I am focusing on:
 
 - Storing original files and parsed artifacts.
 - Building indexes for retrieval.

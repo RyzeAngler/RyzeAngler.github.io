@@ -1,12 +1,12 @@
 import type { Metadata, Site, Socials } from "@types";
 
 export const SITE: Site = {
-  NAME: "AI Agent Engineering",
+  NAME: "Ryze Wu",
   DESCRIPTION:
-    "AI agent engineering across agent applications, runtimes, orchestration, retrieval, evaluation, tracing, and delivery.",
+    "I build AI agent applications and the runtimes, tools, and evaluation systems behind them.",
   URL: "https://ryzeangler.github.io",
   NUM_WORKS_ON_HOMEPAGE: 4,
-  NUM_PROJECTS_ON_HOMEPAGE: 2,
+  NUM_PROJECTS_ON_HOMEPAGE: 3,
 };
 
 export const HOME: Metadata = {
@@ -17,24 +17,31 @@ export const HOME: Metadata = {
 export const WORK: Metadata = {
   TITLE: "Work",
   DESCRIPTION:
-    "AI agent application development, platform engineering, orchestration, protocols, retrieval, evaluation, and delivery.",
+    "Selected work across enterprise Agent SDKs, runtimes, orchestration, applications, and production delivery.",
 };
 
+export const WORK_ENTRY_IDS = new Set([
+  "agent-runtime",
+  "intelligent-routing-orchestration",
+  "rag-infrastructure",
+  "evaluation-tracing",
+]);
+
 export const PROJECTS: Metadata = {
-  TITLE: "Projects",
-  DESCRIPTION: "Selected public and in-progress projects.",
+  TITLE: "Selected projects",
+  DESCRIPTION: "The public projects and engineering notes I am building and maintaining.",
 };
 
 export const WRITING: Metadata = {
-  TITLE: "Writing",
+  TITLE: "Notes",
   DESCRIPTION:
-    "Technical writing topics around AI agents, orchestration, retrieval, evaluation, and engineering systems.",
+    "I write about AI agents, orchestration, retrieval, evaluation, and the engineering systems around them.",
 };
 
 export const ABOUT: Metadata = {
   TITLE: "About",
   DESCRIPTION:
-    "AI agent engineering across application and platform layers.",
+    "I build AI agent systems across application and platform layers.",
 };
 
 export const SOCIALS: Socials = [

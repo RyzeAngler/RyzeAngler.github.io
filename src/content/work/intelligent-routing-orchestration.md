@@ -1,14 +1,16 @@
 ---
-title: Intelligent Routing and Orchestration
-description: Request understanding, clarification, routing, handoff, and plan orchestration across agent workflows.
+title: Multi-Agent Planning and Orchestration
+description: I built a multi-Agent planning and orchestration control plane for complex goal-oriented tasks.
 order: 4
 tags:
-  - Routing
+  - Multi-Agent
+  - Planning
   - Orchestration
-  - Handoff
-  - LangGraph
+  - State Machine
 ---
 
-Routing and orchestration work covers unified entry points, semantic parsing,
-clarification paths, target-agent selection, handoff decisions, plan generation,
-graph execution, conditional routing, parallel branches, and loop control.
+I designed the control plane from 0 to 1 around graph orchestration, versioned
+plans, state machines, and event-driven execution. It coordinates semantic,
+scenario, and resource centers with Agent, human, MCP, and Skill resources, and
+supports plan confirmation, modification, execution, pause, recovery, completion,
+and cancellation.

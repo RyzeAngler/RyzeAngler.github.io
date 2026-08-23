@@ -1,18 +1,16 @@
 ---
 import PageLayout from "@layouts/PageLayout.astro";
 import Container from "@components/Container.astro";
+import Link from "@components/Link.astro";
 import { WRITING } from "@consts";
 
-const topics = [
-  "Building domain agents that survive real task boundaries",
-  "Workflow orchestration with LangGraph, routing, clarification, and handoff",
-  "Agent SDK design for memory, tools, streaming, and service exposure",
-  "Event contracts between agent platforms and external systems",
-  "RAG, KMS, and runtime file context for agent workflows",
-  "Trace-based evaluation, LLM-as-a-Judge, and quality loops",
-  "Langflow custom components for low-code agent workflows",
-  "Evidence-based engineering profiles from Codex session history",
-];
+const note = {
+  title: "Agent Engineering Notes",
+  description:
+    "I am collecting practical notes on how to turn a program that calls a model into an Agent system that can run, deliver, and evolve over time.",
+  href: "https://github.com/RyzeAngler/agent-engineering-notes",
+  tags: ["Runtime", "Orchestration", "Observability", "Evaluation"],
+};
 ---
 
 <PageLayout title={WRITING.TITLE} description={WRITING.DESCRIPTION}>
@@ -20,21 +18,38 @@ const topics = [
     <div class="space-y-10">
       <div class="animate space-y-2">
         <h1 class="text-2xl font-semibold text-zinc-950 dark:text-white">
-          Writing
+          Notes
         </h1>
         <p>
-          This page stays intentionally sparse until finished notes are ready to
-          publish. The topics below reflect recurring engineering problems rather
-          than a list of draft articles.
+          I keep one living document on the boundaries, state, and trade-offs that
+          shape my Agent systems.
         </p>
       </div>
-      <ul class="animate grid gap-3">
-        {topics.map((topic) => (
-          <li class="rounded-lg border border-zinc-200 p-4 dark:border-zinc-800">
-            {topic}
-          </li>
-        ))}
-      </ul>
+      <div
+        class="animate rounded-lg border border-zinc-200 p-5 dark:border-zinc-800"
+      >
+        <div class="space-y-2">
+          <p class="text-xs font-medium uppercase tracking-[0.18em] text-zinc-500">
+            Public document
+          </p>
+          <h2 class="text-lg font-semibold text-zinc-950 dark:text-white">
+            {note.title}
+          </h2>
+          <p>{note.description}</p>
+        </div>
+        <div class="mt-5 flex flex-wrap gap-2">
+          {note.tags.map((tag) => (
+            <span
+              class="rounded-full border border-zinc-200 px-2.5 py-1 text-xs text-zinc-500 dark:border-zinc-800"
+            >
+              {tag}
+            </span>
+          ))}
+        </div>
+        <div class="mt-6">
+          <Link href={note.href} external>Open the document →</Link>
+        </div>
+      </div>
     </div>
   </Container>
 </PageLayout>

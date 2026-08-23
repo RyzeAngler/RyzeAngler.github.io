@@ -1,14 +1,15 @@
 ---
-title: Evaluation, Tracing, and Quality Loops
-description: Trace-based evaluation, LLM-as-a-Judge, Langfuse-style observability, and feedback loops for agent quality.
+title: Agent Production Engineering
+description: I standardized production engineering for Agent systems through evaluation, observability, build pipelines, and delivery.
 order: 7
 tags:
   - Evaluation
-  - Tracing
-  - LLM-as-a-Judge
-  - Feedback Loops
+  - Observability
+  - Build Pipeline
+  - Linux x86 / ARM
 ---
 
-Evaluation is treated as part of the agent loop, not only final-answer grading.
-Traces, generated cases, judge feedback, process-level checks, latency metrics,
-and written scores can all feed back into execution quality.
+I established unified logging, Langfuse and LLM-as-a-Judge evaluation, internal
+artifacts, and offline build flows for Agent delivery. I also supported source
+protection, Linux x86/ARM multi-architecture delivery, Dify maintenance, and
+Langflow integration for enterprise projects.

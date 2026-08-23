@@ -1,14 +1,16 @@
 ---
-title: Agent Platform and Runtime
-description: Runtime, SDK, service exposure, and execution foundations for reliable agent systems.
+title: Enterprise Agent SDK and Runtime
+description: I designed and developed an enterprise Agent SDK and Runtime from 0 to 1.
 order: 2
 tags:
-  - Agent Runtime
   - Agent SDK
+  - Agent Runtime
+  - Tool / MCP / Skill
   - LangGraph
-  - FastAPI
 ---
 
-Runtime work covers graph-based execution, blocking and streaming paths, session
-context, service APIs, reusable SDK surfaces, and project scaffolding that lets
-agents run as maintainable services instead of isolated demos.
+I unified model calls, Agent Runtime, Tool/MCP/Skill, RAG, Memory, tracing, and
+service APIs around one SDK. I also built the CLI, standard service templates,
+and Langflow integration packages, with support for synchronous and asynchronous
+calls, ReAct execution, LangGraph multi-node orchestration, and structured event
+flows.

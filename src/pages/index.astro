@@ -4,9 +4,18 @@ import Container from "@components/Container.astro";
 import PageLayout from "@layouts/PageLayout.astro";
 import ArrowCard from "@components/ArrowCard.astro";
 import Link from "@components/Link.astro";
-import { HOME, PROJECTS, SITE, SOCIALS, WORK, WRITING } from "@consts";
+import {
+  HOME,
+  PROJECTS,
+  SITE,
+  SOCIALS,
+  WORK,
+  WORK_ENTRY_IDS,
+  WRITING,
+} from "@consts";
 
 const work = (await getCollection("work"))
+  .filter((entry) => WORK_ENTRY_IDS.has(entry.id))
   .sort((a, b) => a.data.order - b.data.order)
   .slice(0, SITE.NUM_WORKS_ON_HOMEPAGE);
 
@@ -20,22 +29,23 @@ const projects = (await getCollection("projects"))
     <div class="space-y-16">
       <section class="space-y-5">
         <p class="animate text-sm font-semibold uppercase tracking-[0.22em] text-accent">
-          AI Agent Engineering
+          Ryze Wu · AI Agent Engineering
         </p>
         <div class="animate space-y-4">
           <h1 class="max-w-3xl text-4xl font-semibold leading-tight text-zinc-950 dark:text-white md:text-5xl">
-            Building AI agents and the systems behind them.
+            I build agents and the systems behind them.
           </h1>
           <p class="max-w-2xl text-lg leading-8 text-zinc-600 dark:text-zinc-300">
-            Domain agents, tool use, workflow design, runtimes, intelligent routing,
-            orchestration, retrieval, evaluation, tracing, and delivery for reliable
-            engineering environments.
+            I work across domain agents, tool use, workflow design, runtimes,
+            routing, orchestration, retrieval, evaluation, tracing, and delivery. I
+            care about clear boundaries, observable execution, and systems that remain
+            useful outside a demo.
           </p>
         </div>
         <div class="animate flex flex-wrap gap-3 text-sm">
           <Link href="/projects">View projects</Link>
           <span>/</span>
-          <Link href="/work">Work focus</Link>
+          <Link href="/work">View engineering focus</Link>
           <span>/</span>
           <Link href="https://github.com/RyzeAngler" external>GitHub</Link>
         </div>
@@ -46,9 +56,9 @@ const projects = (await getCollection("projects"))
           <h2 class="font-semibold text-zinc-950 dark:text-white">
             {WORK.TITLE}
           </h2>
-          <Link href="/work">See all work</Link>
+          <Link href="/work">View all engineering focus</Link>
         </div>
-        <div class="grid gap-3">
+        <div class="grid gap-3 md:grid-cols-2">
           {work.map((entry) => (
             <div class="rounded-lg border border-zinc-200 p-4 dark:border-zinc-800">
               <div class="font-semibold text-zinc-950 dark:text-white">
@@ -67,9 +77,9 @@ const projects = (await getCollection("projects"))
           <h2 class="font-semibold text-zinc-950 dark:text-white">
             {PROJECTS.TITLE}
           </h2>
-          <Link href="/projects">See all projects</Link>
+          <Link href="/projects">View all projects</Link>
         </div>
-        <ul class="flex flex-col gap-4">
+        <ul class="grid gap-4 md:grid-cols-2">
           {projects.map((project) => (
             <li>
               <ArrowCard entry={project} />
@@ -83,13 +93,12 @@ const projects = (await getCollection("projects"))
           <h2 class="font-semibold text-zinc-950 dark:text-white">
             {WRITING.TITLE}
           </h2>
-          <Link href="/writing">Topics</Link>
+          <Link href="/writing">Read the notes</Link>
         </div>
         <p>
-          Notes are planned around agent development, workflow orchestration,
-          runtime design, retrieval, event contracts, trace-based evaluation, and
-          delivery systems. Finished notes will be published only when there is a
-          real article to link.
+          I write about the boundaries that make agent systems easier to build and
+          operate: capabilities, context, runtime execution, orchestration,
+          observability, evaluation, and delivery.
         </p>
       </section>
 

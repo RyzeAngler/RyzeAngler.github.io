@@ -9,7 +9,7 @@ const { entry } = Astro.props;
 ---
 
 <a href={`/${entry.collection}/${entry.id}`} class="relative group flex flex-nowrap py-3 px-4 pr-10 rounded-lg border border-zinc-200 dark:border-zinc-800 hover:bg-zinc-100 dark:hover:bg-zinc-900 hover:text-zinc-950 dark:hover:text-white transition-colors duration-300 ease-in-out">
-  <div class="flex flex-col flex-1 truncate">
+  <div class="flex min-w-0 flex-1 flex-col">
     <div class="flex flex-wrap items-center gap-2">
       <div class="font-semibold">
         {entry.data.title}
